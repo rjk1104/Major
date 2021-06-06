@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:id="@+id/coordinatorLayout"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:elevation="5dp"
+            android:id="@+id/headerLayout"
+            android:background="@drawable/corona1"
+            android:layout_height="220dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/header_corner"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Covid-19 Status Checker"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="#538F55"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/title"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/title"
+                    android:textSize="10dp"
+                    android:id="@+id/update"
+                    android:textColor="#F44336"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    />
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/dist_details_toolbar"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:minHeight="?attr/actionBarSize"
+                    android:background="@color/toolbarTransparent"
+                    app:theme="@style/Theme.Design.Light"
+                    android:elevation="10dp"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Covid-19 Cases of India"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:id="@+id/india_covid_cases"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_refresh_black_24dp"
+                    android:layout_toRightOf="@+id/india_covid_cases"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/refresh_btn"
+
+                    />
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_main"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="10dp"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:cardElevation="2dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/first_row"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="180dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card2"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp"
+                            app:layout_constraintEnd_toStartOf="@+id/card"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:id="@+id/confirmed"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="CONFIRMED"
+                                    android:textAlignment="center"
+                                    android:textColor="#FF829C"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/dist_daily_confirm_cases"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.13" />
+
+
+                                <TextView
+                                    android:id="@+id/dist_daily_confirm_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#FF829C"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/dist_total_confirm_cases"
+                                    app:layout_constraintTop_toBottomOf="@+id/confirmed" />
+
+                                <TextView
+                                    android:id="@+id/dist_total_confirm_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#FF083B"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/dist_daily_confirm_cases" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/card2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:id="@+id/active"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="ACTIVE"
+                                    android:textAlignment="center"
+                                    android:textColor="#89C2FF"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/dist_total_active_cases"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.13" />
+
+
+                                <TextView
+                                    android:id="@+id/dist_total_active_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#0C81FF"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/active"
+                                    app:layout_constraintVertical_bias="0.07999998" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/second_section"
+                        android:layout_width="match_parent"
+                        android:layout_below="@id/first_row"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="10dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card3"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="10dp"
+
+                            app:cardElevation="10dp"
+                            app:layout_constraintEnd_toStartOf="@+id/card4"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:id="@+id/recover"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="RECOVERED"
+                                    android:textAlignment="center"
+                                    android:textColor="#9CD6A9"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="@+id/dist_daily_recover_cases"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.13"
+                                    tools:layout_editor_absoluteX="0dp" />
+
+
+                                <TextView
+                                    android:id="@+id/dist_daily_recover_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#9CD6A9"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/dist_total_recover_cases"
+                                    app:layout_constraintTop_toBottomOf="@+id/recover" />
+
+                                <TextView
+                                    android:id="@+id/dist_total_recover_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#3CAF57"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/dist_daily_recover_cases" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/card4"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="16dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/card3"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp">
+
+                                <TextView
+                                    android:id="@+id/death"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="DEATH"
+                                    android:textAlignment="center"
+                                    android:textColor="#D9DBE7"
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/dist_daily_death_cases"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.13" />
+
+
+                                <TextView
+                                    android:id="@+id/dist_daily_death_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#D9DBE7"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toTopOf="@+id/dist_total_death_cases"
+                                    app:layout_constraintTop_toBottomOf="@+id/death" />
+
+                                <TextView
+                                    android:id="@+id/dist_total_death_cases"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="..."
+                                    android:textAlignment="center"
+                                    android:textColor="#6F7880"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/dist_daily_death_cases" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <include layout="@layout/shimmer_homepage"
+                        android:id="@+id/shimmer_layout"
+                        />
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="All rights reserved to @COVID19INDIA.ORG."
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:textColor="#fff"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="20dp"
+            />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+

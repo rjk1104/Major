@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Covid19 Checker</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="slide_1_title">Welcome To Covid-19 Status Checker India</string>
+    <string name="slide_1_desc">Here you can daily check the status of Covid-19.</string>
+    <string name="slide_2_title">Realtime Updates</string>
+    <string name="slide_2_desc">Realtime daily updates from the @COVID19INDIA.ORG portal of COVID-19. Also you can see news.</string>
+    <string name="slide_3_title">Allow Permissions</string>
+    <string name="slide_3_desc">Please allow the internet, we only need the Internet Connection, If turned on then you are ready to go.</string>
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+</resources>

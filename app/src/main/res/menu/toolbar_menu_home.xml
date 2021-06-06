@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="Search"
+        android:id="@+id/search_by_state"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_search_home"
+        />
+
+    <item
+        android:title="Status by State"
+        android:id="@+id/status_by_state"
+
+        />
+    <item
+        android:title="Symptoms of Covid19"
+        android:id="@+id/symptom"
+
+        />
+    <item
+        android:title="About Corona"
+
+        android:id="@+id/about_corona"
+        />
+    <item
+        android:title="About App"
+        android:id="@+id/about_app"
+        />
+</menu>

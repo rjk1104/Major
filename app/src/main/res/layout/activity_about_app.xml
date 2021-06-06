@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:fadeScrollbars="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/about_corona"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_about"
+            android:layout_alignParentTop="true"
+            />
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dist_details_toolbar"
+            app:titleTextColor="#fff"
+            app:subtitleTextColor="#fff"
+            android:minHeight="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            android:layout_alignParentTop="true"
+            android:background="@color/toolbarTransparent"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/about_corona"
+            android:text="Covid-19 Status Checker India"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:id="@+id/what_is_corona"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/by_who"
+            android:layout_below="@+id/what_is_corona"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:background="#CDC7C7"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/by_who"
+            android:text="Covid-19 status checker is only for India.Here you can check the number of cases according to district and state."
+
+            android:textColor="#000"
+            android:id="@+id/def_of_corona1"
+            android:justificationMode="inter_word"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/def_of_corona1"
+            android:text="The purpose of this app is to give corona information about India"
+
+            android:textColor="#000"
+            android:id="@+id/def_of_corona2"
+            android:justificationMode="inter_word"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/def_of_corona2"
+            android:text="App Version"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:id="@+id/def_of_corona3"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/def_of_corona3"
+            android:text="..."
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:id="@+id/version"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            />
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
